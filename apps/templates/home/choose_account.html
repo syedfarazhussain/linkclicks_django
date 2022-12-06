@@ -1,0 +1,33 @@
+{% extends "layouts/base.html" %}
+{%load static%}
+{% block title %} Select Ad Account {% endblock %} 
+{% block stylesheets %}
+  
+	<!-- rangeslider css -->
+    <link rel="stylesheet" href="{%static 'assets/css/pages/choose_manager.css'%}">
+{% endblock stylesheets %}
+
+{% block content %}	
+<div class="modal-content manager">
+	<div class="modal-header">
+		<h5 class="modal-title">Select Ad Account</h5>
+		<button type=" button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	</div>
+	<div class="modal-body">
+		<form id="choose_manager_form" method="post" action="/ad-accounts">
+			{%csrf_token%}
+			<input hidden name="ad_platform" value="{{ad_platform}}" >
+			<div class="row">
+				<div class="form-group col-md">
+					<select class="form-select" name="account" id="account">
+						{%for i in accounts%}
+						<option value="{{i}}">{{i.account_name}}</option>
+						{%endfor%}
+						</select><br>
+				</div>						
+			</div>
+			<input type="submit" class="btn btn-primary shadow-2" value="Submit">
+		</form>
+	</div>
+</div>
+{% endblock content %}

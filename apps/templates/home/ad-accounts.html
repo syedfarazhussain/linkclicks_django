@@ -1,0 +1,98 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Ad Accounts{% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    
+					<div class="row">
+						<!--[ google ads section ] start-->
+						<div class="col-md-3 col-xl-3">
+							<div class="card google-ads">
+								<div class="card-block">
+									<h6 class="mb-4"><i class="fab fa-google"></i> <i class="fab fa-youtube"></i> - Google Ads </i></h6>
+									<div class="row d-flex align-items-center">
+										
+										{% if authorized_platforms.google_ads %}
+											<a href="/google_ads/disable"><button type="button" class="btn btn-success" title="Disable Google Ads" data-toggle="tooltip"><i
+                                                class="fas fa-check-circle"></i> Enabled</button></a>
+												<div>{{authorized_platforms.google_ads}}</div>
+										{% else %}
+											<a href="/google_ads/enable"><button type="button" class="btn btn-danger" title="Enable Google Ads" data-toggle="tooltip"><i
+                                                class="fas fa-exclamation-triangle"></i> Enable Google Ads</button></a>
+										{% endif %}
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!--[ google ads section ] end-->
+						
+						<!--[ meta ads section ] start-->
+						<div class="col-md-3 col-xl-3">
+							<div class="card google-ads">
+								<div class="card-block">
+									<h6 class="mb-4"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> - Meta Ads</h6>
+									<div class="row d-flex align-items-center">
+										
+										{% if authorized_platforms.meta_ads %}
+											<a href="/meta/disable"><button type="button" class="btn btn-success" title="Disable Meta Ads" data-toggle="tooltip"><i
+                                                class="fas fa-check-circle"></i> Enabled</button></a>
+												<div>{{authorized_platforms.meta_ads}}</div>
+										{% else %}
+											<a href="/meta/enable"><button type="button" class="btn btn-danger" title="Enable Meta Ads" data-toggle="tooltip"><i
+                                                class="fas fa-exclamation-triangle"></i> Enable Meta Ads</button></a>
+												
+												
+										{% endif %}
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!--[ meta ads section ] end-->
+
+						<!--[ Pinerest ads section ] start-->
+						<div class="col-md-3 col-xl-3">
+							<div class="card google-ads">
+								<div class="card-block">
+									<h6 class="mb-4"><i class="fab fa-pinterest"></i> - Pinterest Ads</h6>
+									<div class="row d-flex align-items-center">
+										
+										{% if authorized_platforms.pinterest %}
+											<a href="/pinterest/disable"><button type="button" class="btn btn-success" title="Disable Pinterest Ads" data-toggle="tooltip"><i
+                                                class="fas fa-check-circle"></i> Enabled</button></a>
+												<div>{{authorized_platforms.pinterest}}</div>
+										{% else %}
+											<a href="/pinterest/enable"><button type="button" class="btn btn-danger" title="Enable Pinterest Ads" data-toggle="tooltip"><i
+                                                class="fas fa-exclamation-triangle"></i> Enable Pinterest</button></a>
+										{% endif %}
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!--[ meta ads section ] end-->
+
+						
+						
+					</div>
+					
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
