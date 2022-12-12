@@ -11,4 +11,7 @@ urlpatterns = [
 	path('enable',views.enable,name='enable'),
 	path('disable',views.disable,name='disable'),
 	path('oauth',views.oauth,name='oauth'),
+	path('authorize',views.authorize,name='authorize'),
+	path('authorizedPlatforms',views.authorizedPlatforms,name='authorizedPlatforms'),
+	path('saveAccountID',views.saveAccountID,name='saveAccountID'),
 ]
